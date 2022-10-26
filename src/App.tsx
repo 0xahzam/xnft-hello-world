@@ -10,7 +10,9 @@ ReactXnft.events.on("connect", () => {
 export function App() {
   return (
     <View>
-      <Text>Hello, World!</Text>
+      <Text style={{color : "black"}}>First time tinkering with xNFT or actually anything sol related, this is cool, gonna play more around this
+      happy building :)</Text>
+      <Text style={{color : "black"}}>- ahzam</Text>
     </View>
   );
 }
