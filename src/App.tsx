@@ -1,4 +1,4 @@
-import ReactXnft, { Text, View } from "react-xnft";
+import ReactXnft, { Text, View, Tab } from "react-xnft";
 
 //
 // On connection to the host environment, warm the cache.
@@ -9,15 +9,60 @@ ReactXnft.events.on("connect", () => {
 
 export function App() {
   return (
-    <View style={{display : "flex", gap:"20px", flexDirection : "column", background:"#FFFEE7"}}>
+    <View style = {{ height : "100%" }}>
+      <Tab.Navigator
+        options={({ route }) => {
+          return {
+            tabBarIcon: ({ focused }) =>{
+              if (route.name === "Eth") {
+                return <Tab.Icon element={ <View><Text>Eth</Text></View>} />
+               } 
+               else{
+                return ( 
+                <Tab.Icon element={ <View><Text>Sol</Text></View>} />
+                );
+              }
+            }, 
+          };
+        }}
+        >
+          <Tab.Screen 
+          name="Eth"
+          component={() => <Eth/>}
+          />
 
-      <Text style={{color : "#46472A",  width:"100vw"}}>
-      ello ello! my name is Ahzam — just an 18 y/o crafting the craft
-      </Text>
-
-      <Button style={{color : "#46472A", background:"#FFFFDD", paddingtop:"20px", border:"2px solid #C8C8A8", width:"100vw"}}>
-      Twitter -> 0xahzam
-      </Button>
+          <Tab.Screen 
+          name="Sol"
+          component={() => <Sol/>}
+          />
+          </Tab.Navigator>
     </View>
   );
 }
+
+function Eth() {
+  return(
+    <View style = {{
+      background :"pink",
+      height : "100%"
+    }}>
+      <Text>
+        Eth
+      </Text>
+    </View>
+  )
+}
+
+  function Sol() {
+    return(
+      <View style = {{
+        background :"Orange",
+        height : "100%"
+      }}>
+        <Text>
+          Sol
+        </Text>
+      </View>
+    )
+  }
+
