@@ -1,5 +1,8 @@
 # xnft-quickstart
 
+![WhatsApp Image 2022-11-07 at 12 19 53](https://user-images.githubusercontent.com/104062587/200243994-4e3c5aba-b936-42a6-a6f2-bc6289687b4d.jpg)
+
+
 Quickstart repo for building your own xNFT.
 
 ## Developing
